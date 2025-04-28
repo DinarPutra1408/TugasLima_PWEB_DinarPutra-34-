@@ -676,7 +676,7 @@ p {
 
 /* === Improved Guestbook Styles === */
 .guestbook {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: var(--light);
 }
 
@@ -696,7 +696,7 @@ p {
     background-color: var(--light);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 30px;
+    padding: 25px;
     height: 100%;
 }
 
@@ -768,8 +768,16 @@ p {
 
 .list-controls {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+    .list-controls {
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .search-box {
@@ -777,6 +785,7 @@ p {
     position: relative;
     display: flex;
     align-items: center;
+    min-width: 0; /* Allows the search box to shrink properly */
 }
 
 .search-box svg {
@@ -794,8 +803,9 @@ p {
 }
 
 .btn.small {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .guestbook-list {
